@@ -1,6 +1,11 @@
-class User {
+interface IUser{
+  age: number;
+  givenName: string;
+}
+
+class User implements IUser {
   public age: number;
-  public familyName: string;
+  private familyName: string;
   public givenName: string;
   private skill: { water: {}, hi: {} };
 
@@ -20,6 +25,10 @@ class User {
         }
       },
     };
+  }
+
+  public get getFamilyName() {
+    return this.familyName;
   }
 
   public getAgeAfterTenYears(age?:number): number {

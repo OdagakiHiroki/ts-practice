@@ -8,7 +8,8 @@ window.onload = () => init();
 const init = () => {
   const contentsElem = document.getElementById('contents');
   if (!!contentsElem) {
-    contentsElem.innerText = `${user.familyName} ${user.givenName}`;
+    const familyName = `${user.getFamilyName}`;
+    contentsElem.innerText = `${familyName} ${user.givenName}`;
   }
 
   const saibanButton = document.getElementById('saiban') as HTMLButtonElement;
