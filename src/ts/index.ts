@@ -16,4 +16,16 @@ const init = () => {
   saibanButton.onclick = (e) => {
     uuidSpan.innerText = uuidv4();
   }
+  const tenYearsAfterAgeBtn = document.getElementById('tenYearsAfterAgeBtn') as HTMLButtonElement;
+  const tenYearsAfterAgeSpan = document.getElementById('tenYearsAfterAge') as HTMLSpanElement;
+  tenYearsAfterAgeBtn.onclick = (e) => {
+    const tenYearsAfterAge = user.getAgeAfterTenYears(user.age);
+    tenYearsAfterAgeSpan.innerText = String(tenYearsAfterAge);
+  }
+  const skillBtn = document.getElementById('skillBtn') as HTMLButtonElement;
+  const skillSpan = document.getElementById('skill') as HTMLSpanElement;
+  skillBtn.onclick = (e) => {
+    const skill = user.getSkill();
+    skillSpan.innerText = String(Object.keys(skill.water));
+  }
 }
