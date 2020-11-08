@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/ts/index.ts',
 
   output: {
-    path: path.join(__dirname, "src/dist/js"),
+    path: path.join(__dirname, "dist/js"),
     filename: "index.js"
   },
 
@@ -30,5 +30,9 @@ module.exports = {
       '.ts',
       '.js' // node_modulesのライブラリ読み込みに必要
     ]
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist/html'),
+    publicPath: '/js/'
   }
 };
